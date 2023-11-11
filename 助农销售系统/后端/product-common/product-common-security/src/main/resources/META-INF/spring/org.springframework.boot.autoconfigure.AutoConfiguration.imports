@@ -1,0 +1,8 @@
+com.xyw.product.common.security.service.ProductUserDetailsServiceImpl
+com.xyw.product.common.security.service.ProductAppUserDetailsServiceImpl
+com.xyw.product.common.security.service.ProductWechatUserDetailsServiceImpl
+com.xyw.product.common.security.service.ProductRedisOAuth2AuthorizationService
+com.xyw.product.common.security.service.ProductRedisOAuth2AuthorizationConsentService
+com.xyw.product.common.security.component.ProductSecurityInnerAspect
+com.xyw.product.common.security.component.ProductSecurityMessageSourceConfiguration
+com.xyw.product.common.security.service.ProductRemoteRegisteredClientRepository

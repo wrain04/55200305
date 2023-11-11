@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.xyw</groupId>
+		<artifactId>product</artifactId>
+		<version>3.6.1</version>
+	</parent>
+
+	<artifactId>product-visual</artifactId>
+
+	<description>product 图形化相关功能</description>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>product-codegen</module>
+		<module>product-monitor</module>
+		<module>product-sentinel-dashboard</module>
+		<module>product-xxl-job-admin</module>
+	</modules>
+</project>

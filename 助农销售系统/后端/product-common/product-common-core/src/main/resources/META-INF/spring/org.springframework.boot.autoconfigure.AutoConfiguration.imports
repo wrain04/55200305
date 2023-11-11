@@ -1,0 +1,6 @@
+com.xyw.product.common.core.config.TaskExecutorConfiguration
+com.xyw.product.common.core.config.JacksonConfiguration
+com.xyw.product.common.core.config.RedisTemplateConfiguration
+com.xyw.product.common.core.config.RestTemplateConfiguration
+com.xyw.product.common.core.util.SpringContextHolder
+com.xyw.product.common.core.config.WebMvcConfiguration

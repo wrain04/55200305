@@ -1,0 +1,19 @@
+version: '3'
+services:
+  product-ui:
+    build:
+      context: .
+    restart: always
+    container_name: product-ui
+    image: product-ui
+    networks:
+      - product_default
+    external_links:
+      - product-gateway
+    ports:
+      - 80:80
+
+# 加入到后端网络， 默认为 pig_default  | docker network ls   查看
+networks:
+  product_default:
+    external: true

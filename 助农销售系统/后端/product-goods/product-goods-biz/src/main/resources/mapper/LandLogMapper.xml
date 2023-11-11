@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xyw.product.goods.mapper.LandLogMapper">
+
+  <resultMap id="landLogMap" type="com.xyw.product.goods.entity.LandLog">
+    <id property="logId" column="log_id"/>
+    <result property="landId" column="land_id"/>
+    <result property="productionValue" column="production_value"/>
+    <result property="DataTime" column="data_time"/>
+    <result property="updateBy" column="update_by"/>
+    <result property="createBy" column="create_by"/>
+    <result property="updateTime" column="update_time"/>
+    <result property="createTime" column="create_time"/>
+  </resultMap>
+	<select id="selectToChart" resultType="java.math.BigDecimal">
+		SELECT SUM(CAST(`production_value` AS DECIMAL(18,2))) AS `production_value`
+		FROM `land_log`
+		WHERE `land_id`=#{landId} AND `data_time` BETWEEN #{begin} AND #{end};
+	</select>
+</mapper>

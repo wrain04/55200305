@@ -1,0 +1,127 @@
+version: '3'
+services:
+  product-mysql:
+    build:
+      context: ./db
+    environment:
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_ROOT_PASSWORD: 3485983aaa
+    restart: always
+    container_name: product-mysql
+    image: product-mysql
+    ports:
+      - 3306:3306
+
+  product-redis:
+    image: redis:7.0.0
+    ports:
+      - 6379:6379
+    restart: always
+    container_name: product-redis
+    hostname: product-redis
+
+  product-register:
+    build:
+      context: ./product-register
+    restart: always
+    ports:
+      - 8848:8848
+    container_name: product-register
+    hostname: product-register
+    image: product-register
+
+  product-gateway:
+    build:
+      context: ./product-gateway
+    restart: always
+    ports:
+      - 9999:9999
+    container_name: product-gateway
+    hostname: product-gateway
+    image: product-gateway
+
+  product-auth:
+    build:
+      context: ./product-auth
+    restart: always
+    container_name: product-auth
+    hostname: product-auth
+    image: product-auth
+
+  product-upms:
+    build:
+      context: ./product-upms/product-upms-biz
+    restart: always
+    container_name: product-upms
+    hostname: product-upms
+    image: product-upms
+
+  product-goods:
+    build:
+      context: ./product-goods/product-goods-biz
+    restart: always
+    container_name: product-goods
+    hostname: product-goods
+    image: product-goods
+#  jenkins:
+#      image: jenkins/jenkins:lts
+#      volumes:    # 挂载目录  本地文件夹目录:容器文件夹目录
+#       - /data/jenkins/:/var/jenkins_home
+#       - /var/run/docker.sock:/var/run/docker.sock
+#       - /usr/bin/docker:/usr/bin/docker
+#       - /usr/lib/x86_64-linux-gnu/libltdl.so.7:/usr/lib/x86_64-linux-gnu/libltdl.so.7
+#      ports:  # 绑定端口
+#       - "8088:8080"
+#      expose:  # 暴露端口
+#       - "8080"
+#       - "50000"
+#      privileged: true
+#      user: root
+#      restart: always
+#      container_name: jenkins
+#      environment:
+#        JAVA_OPTS: '-Djava.util.logging.config.file=/var/jenkins_home/log.properties'
+  product-order:
+    build:
+      context: ./product-order/product-order-biz
+    restart: always
+    container_name: product-order
+    hostname: product-order
+    image: product-order
+
+#  product-monitor:
+#    build:
+#      context: ./product-visual/product-monitor
+#    restart: always
+#    ports:
+#      - 5001:5001
+#    container_name: product-monitor
+#    hostname: product-monitor
+#    image: product-monitor
+#
+#  product-sentinel:
+#    build:
+#      context: ./product-visual/product-sentinel-dashboard
+#    restart: always
+#    image: product-sentinel
+#    container_name: product-sentinel
+#    ports:
+#      - 5003:5003
+#
+#  product-codegen:
+#    build:
+#      context: ./product-visual/product-codegen
+#    restart: always
+#    container_name: product-codegen
+#    hostname: product-codegen
+#    image: product-codegen
+#
+#  product-job:
+#    build:
+#      context: ./product-visual/product-xxl-job-admin
+#    restart: always
+#    container_name: product-job
+#    hostname: product-job
+#    image: product-job
+#    ports:
+#      - 5004:5004

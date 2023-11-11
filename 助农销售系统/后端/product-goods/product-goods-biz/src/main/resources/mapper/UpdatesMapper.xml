@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xyw.product.goods.mapper.UpdatesMapper">
+  <resultMap id="BaseResultMap" type="com.xyw.product.goods.entity.Updates">
+    <!--@mbg.generated-->
+    <!--@Table product_goods.updates-->
+    <id column="update_id" jdbcType="BIGINT" property="updateId" />
+    <result column="business_id" jdbcType="VARCHAR" property="businessId" />
+    <result column="info" jdbcType="LONGVARCHAR" property="info" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    update_id, business_id, info, update_by, create_by, update_time, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from product_goods.updates
+    where update_id = #{updateId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from product_goods.updates
+    where update_id = #{updateId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.xyw.product.goods.entity.Updates">
+    <!--@mbg.generated-->
+    insert into product_goods.updates (update_id, business_id, info, 
+      update_by, create_by, update_time, 
+      create_time)
+    values (#{updateId,jdbcType=BIGINT}, #{businessId,jdbcType=VARCHAR}, #{info,jdbcType=LONGVARCHAR}, 
+      #{updateBy,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xyw.product.goods.entity.Updates">
+    <!--@mbg.generated-->
+    insert into product_goods.updates
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="updateId != null">
+        update_id,
+      </if>
+      <if test="businessId != null">
+        business_id,
+      </if>
+      <if test="info != null">
+        info,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="updateId != null">
+        #{updateId,jdbcType=BIGINT},
+      </if>
+      <if test="businessId != null">
+        #{businessId,jdbcType=VARCHAR},
+      </if>
+      <if test="info != null">
+        #{info,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xyw.product.goods.entity.Updates">
+    <!--@mbg.generated-->
+    update product_goods.updates
+    <set>
+      <if test="businessId != null">
+        business_id = #{businessId,jdbcType=VARCHAR},
+      </if>
+      <if test="info != null">
+        info = #{info,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where update_id = #{updateId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xyw.product.goods.entity.Updates">
+    <!--@mbg.generated-->
+    update product_goods.updates
+    set business_id = #{businessId,jdbcType=VARCHAR},
+      info = #{info,jdbcType=LONGVARCHAR},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where update_id = #{updateId,jdbcType=BIGINT}
+  </update>
+</mapper>

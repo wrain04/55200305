@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xyw.product.goods.mapper.BusinessDetailMapper">
+
+  <resultMap id="businessDetailMap" type="com.xyw.product.goods.entity.BusinessDetail">
+    <id property="businessId" column="business_id"/>
+    <result property="realName" column="real_name"/>
+    <result property="businessType" column="business_type"/>
+    <result property="address" column="address"/>
+    <result property="description" column="description"/>
+    <result property="mainProducts" column="main_products"/>
+    <result property="lockFlag" column="lock_flag"/>
+    <result property="updateBy" column="update_by"/>
+    <result property="createBy" column="create_by"/>
+    <result property="updateTime" column="update_time"/>
+    <result property="createTime" column="create_time"/>
+  </resultMap>
+</mapper>

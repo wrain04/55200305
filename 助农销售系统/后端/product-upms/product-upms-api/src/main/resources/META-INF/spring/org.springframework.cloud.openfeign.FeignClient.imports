@@ -1,0 +1,8 @@
+com.xyw.product.admin.api.feign.RemoteClientDetailsService
+com.xyw.product.admin.api.feign.RemoteDictService
+com.xyw.product.admin.api.feign.RemoteDeptService
+com.xyw.product.admin.api.feign.RemoteLogService
+com.xyw.product.admin.api.feign.RemoteTokenService
+com.xyw.product.admin.api.feign.RemoteUserService
+com.xyw.product.admin.api.feign.RemoteParamService
+com.xyw.product.admin.api.feign.RemoteFileService

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xyw.product.goods.mapper.BusinessLandMapper">
+
+  <resultMap id="businessLandMap" type="com.xyw.product.goods.entity.BusinessLand">
+    <id property="landId" column="land_id"/>
+    <result property="businessId" column="business_id"/>
+    <result property="mainProducts" column="main_products"/>
+    <result property="landName" column="land_name"/>
+    <result property="landArea" column="land_area"/>
+    <result property="landImage" column="land_image"/>
+    <result property="address" column="address"/>
+    <result property="updateBy" column="update_by"/>
+    <result property="createBy" column="create_by"/>
+    <result property="updateTime" column="update_time"/>
+    <result property="createTime" column="create_time"/>
+  </resultMap>
+</mapper>

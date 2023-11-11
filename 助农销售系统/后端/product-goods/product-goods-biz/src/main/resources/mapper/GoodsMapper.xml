@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xyw.product.goods.mapper.GoodsMapper">
+	<sql id="Base_Column_List">
+		goods_id,
+		grade_id,
+		business_id,
+		goods_name,
+		sales,
+		st,
+		goods_image,
+		description,
+		`status`,
+		update_by,
+		create_by,
+		update_time,
+		create_time
+	</sql>
+
+	<resultMap id="goodsMap" type="com.xyw.product.goods.entity.Good">
+		<id property="goodsId" column="goods_id"/>
+		<result property="gradeId" column="grade_id"/>
+		<result property="businessId" column="business_id"/>
+		<result property="goodsName" column="goods_name"/>
+		<result property="sales" column="sales"/>
+		<result property="stock" column="stock"/>
+		<result property="goodsImage" column="goods_image"/>
+		<result property="description" column="description"/>
+		<result property="status" column="status"/>
+		<result property="updateBy" column="update_by"/>
+		<result property="createBy" column="create_by"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="createTime" column="create_time"/>
+	</resultMap>
+	<resultMap id="goodsVOMap" type="com.xyw.product.goods.vo.GoodsVO">
+		<id property="goodsId" column="goods_id"/>
+		<result property="gradeId" column="grade_id"/>
+		<result property="businessId" column="business_id"/>
+		<result property="goodsName" column="goods_name"/>
+		<result property="sales" column="sales"/>
+		<result property="stock" column="stock"/>
+		<result property="description" column="description"/>
+		<result property="status" column="status"/>
+	</resultMap>
+	<select id="selectGoodsInfoByRandom" resultMap="goodsMap">
+		SELECT goods_id, goods_image FROM `goods` ORDER BY RAND() LIMIT #{n};
+	</select>
+	<select id="getByBusinessId" resultMap="goodsVOMap">
+		SELECT goods_id, goods_image FROM `goods` ORDER BY RAND() LIMIT #{n};
+	</select>
+</mapper>

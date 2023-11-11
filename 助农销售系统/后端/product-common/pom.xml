@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.xyw</groupId>
+        <artifactId>product</artifactId>
+        <version>3.6.1</version>
+    </parent>
+
+    <artifactId>product-common</artifactId>
+    <packaging>pom</packaging>
+
+    <description>product 公共聚合模块</description>
+
+    <modules>
+        <module>product-common-bom</module>
+        <module>product-common-core</module>
+        <module>product-common-datasource</module>
+        <module>product-common-job</module>
+        <module>product-common-log</module>
+        <module>product-common-mybatis</module>
+        <module>product-common-seata</module>
+        <module>product-common-security</module>
+        <module>product-common-feign</module>
+        <module>product-common-swagger</module>
+        <module>product-common-xss</module>
+    </modules>
+</project>

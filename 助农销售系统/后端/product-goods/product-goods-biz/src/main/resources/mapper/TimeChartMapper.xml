@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xyw.product.goods.mapper.TimeChartMapper">
+
+  <resultMap id="timeChartMap" type="com.xyw.product.goods.entity.TimeChart">
+    <id property="chartId" column="chart_id"/>
+    <result property="goodId" column="good_id"/>
+    <result property="time" column="time"/>
+    <result property="images" column="images"/>
+    <result property="description" column="description"/>
+    <result property="updateBy" column="update_by"/>
+    <result property="createBy" column="create_by"/>
+    <result property="updateTime" column="update_time"/>
+    <result property="createTime" column="create_time"/>
+  </resultMap>
+</mapper>

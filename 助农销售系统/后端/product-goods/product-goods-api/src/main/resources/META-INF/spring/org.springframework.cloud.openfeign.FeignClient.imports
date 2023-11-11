@@ -1,0 +1,2 @@
+com.xyw.product.goods.feign.RemoteStatisticsService
+com.xyw.product.goods.feign.RemoteGoodsService

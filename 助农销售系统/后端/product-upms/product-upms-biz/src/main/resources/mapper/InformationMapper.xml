@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xyw.product.admin.mapper.InformationMapper">
+
+  <resultMap id="informationMap" type="com.xyw.product.admin.api.entity.Information">
+    <id property="informationId" column="information_id"/>
+    <result property="informationTitle" column="information_title"/>
+    <result property="informationAuthor" column="information_author"/>
+    <result property="viewNumber" column="view_number"/>
+    <result property="cover" column="cover"/>
+    <result property="releaseTime" column="release_time"/>
+    <result property="updateBy" column="update_by"/>
+    <result property="createBy" column="create_by"/>
+    <result property="updateTime" column="update_time"/>
+    <result property="createTime" column="create_time"/>
+  </resultMap>
+</mapper>

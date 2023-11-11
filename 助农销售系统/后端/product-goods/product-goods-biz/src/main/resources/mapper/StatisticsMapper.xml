@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xyw.product.goods.mapper.StatisticsMapper">
+
+  <resultMap id="statisticsMap" type="com.xyw.product.goods.entity.Statistics">
+    <id property="statisticsId" column="statistics_id"/>
+    <result property="businessId" column="business_id"/>
+    <result property="dateView" column="date_view"/>
+    <result property="orderNum" column="order_num"/>
+    <result property="deal" column="deal"/>
+    <result property="updateBy" column="update_by"/>
+    <result property="createBy" column="create_by"/>
+    <result property="updateTime" column="update_time"/>
+    <result property="createTime" column="create_time"/>
+  </resultMap>
+	<select id="selectToChart" resultType="java.math.BigDecimal">
+		SELECT SUM(CAST(`deal` AS DECIMAL(18,2))) AS `deal_sum`
+		FROM `statistics`
+		WHERE `business_id`=#{businessId} AND `create_time` BETWEEN #{begin} AND #{end};
+	</select>
+</mapper>

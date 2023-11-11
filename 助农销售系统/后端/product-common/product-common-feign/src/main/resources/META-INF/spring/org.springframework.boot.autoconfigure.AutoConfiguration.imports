@@ -1,0 +1,3 @@
+com.xyw.product.common.feign.ProductFeignAutoConfiguration
+com.xyw.product.common.feign.sentinel.SentinelAutoConfiguration
+com.xyw.product.common.feign.sentinel.handle.GlobalBizExceptionHandler
